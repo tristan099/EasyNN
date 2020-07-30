@@ -34,8 +34,15 @@ in combination with either momentum or Nesterov momentum.
 ```
 
 ## Usage
+clone the repo
+```
+git clone https://github.com/tristan099/EasyNN.git
+```
+
 ```
 Example for Neural Network
+
+import the package
 from EasyNN import *
 
 Define your NN architecture 
