@@ -7,7 +7,12 @@ class EasyNN:
     def __init__(self, layers, costfunction):
         self.layers = layers
         self.costfunction = costfunction
-
+        for i in range(len(self.layers)):
+            if i == 0 or i == len(self.layers):
+                continue
+            else:
+                assert self.layers[i].indims == self.layers[i-1].outdims, \
+                "Inner and outer dimensions of hidden layers must match, i.e indims must equal outdims"
     def predict(self, x=None, y=None, taskclassification=False, costfunction=None):
         self.layers[0].forward(x)
         for j in range(1, len(self.layers)):
